@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mohamed & Nermin | دعوة فرح</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Great+Vibes&display=swap');
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#fffaf8;color:#5c4743;font-family:Cairo,sans-serif;overflow-x:hidden}
+#petals{position:fixed;inset:0;pointer-events:none;z-index:20}
+.petal{position:absolute;top:-40px;font-size:20px;animation:fall linear infinite;opacity:.65}
+@keyframes fall{to{transform:translateY(110vh) rotate(360deg)}}
+.cover{position:fixed;inset:0;background:linear-gradient(135deg,#fff,#f7ddd8);z-index:30;display:flex;align-items:center;justify-content:center;transition:1s}
+.cover.hide{opacity:0;visibility:hidden;pointer-events:none}
+.envelope{width:min(90%,420px);padding:48px 25px;text-align:center;background:rgba(255,255,255,.88);border:1px solid #d7aaa2;border-radius:32px;box-shadow:0 25px 70px rgba(100,55,50,.18)}
+.seal{font-size:45px;margin-bottom:10px}
+.cover h1{font-family:"Great Vibes",cursive;font-size:58px;color:#a86d65;margin:5px}
+.cover p{line-height:1.9}
+.open-btn,.btn{border:0;cursor:pointer;display:inline-block;margin:12px 5px;padding:13px 26px;border-radius:30px;text-decoration:none;background:#a86d65;color:#fff;box-shadow:0 9px 22px rgba(168,109,101,.25);font-family:inherit;font-size:15px;transition:.25s}
+.open-btn:hover,.btn:hover{transform:translateY(-3px)}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:30px;position:relative;background:radial-gradient(circle at top,#fff,#fbe9e6 55%,#f4d5d0)}
+.card{max-width:780px;width:100%;padding:55px 25px;border:1px solid #d9aaa1;border-radius:35px;background:rgba(255,255,255,.76);box-shadow:0 20px 60px rgba(130,75,65,.15);backdrop-filter:blur(8px)}
+.small{letter-spacing:3px;color:#a77a72;font-size:14px}
+.names{font-family:"Great Vibes",cursive;font-size:70px;line-height:1.05;color:#9b655e;margin:15px 0}
+.and{font-family:serif;font-size:28px;color:#c8958d}
+.intro{font-size:18px;margin:20px auto;max-width:570px;line-height:2}
+.date{font-size:25px;font-weight:700;color:#8c5d56;margin-top:25px}
+.venue{margin-top:12px;font-size:17px}
+section{padding:75px 22px;text-align:center}
+.title{font-family:"Great Vibes",cursive;font-size:50px;color:#a66d65;margin:0 0 25px}
+.count{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+.unit{min-width:95px;padding:18px 10px;background:#fff;border-radius:18px;box-shadow:0 8px 25px rgba(100,60,50,.08)}
+.num{font-size:30px;font-weight:700;color:#9b655e}.label{font-size:13px;color:#967c77}
+.details{max-width:820px;margin:auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:18px}
+.box{background:#fff;border-radius:22px;padding:25px;box-shadow:0 8px 25px rgba(100,60,50,.08);line-height:1.9}
+.story{max-width:720px;margin:auto;background:#fff;padding:32px;border-radius:25px;box-shadow:0 8px 25px rgba(100,60,50,.08);line-height:2}
+.gallery{max-width:850px;margin:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.photo{height:220px;border-radius:22px;background:linear-gradient(135deg,#f6d9d5,#fff);display:flex;align-items:center;justify-content:center;font-size:48px;box-shadow:0 8px 25px rgba(100,60,50,.08)}
+.rsvp{max-width:560px;margin:auto;background:#fff;padding:30px;border-radius:25px;box-shadow:0 10px 35px rgba(100,60,50,.1)}
+input,textarea{width:100%;padding:14px 16px;margin:8px 0;border:1px solid #e0c3bd;border-radius:15px;font-family:inherit;font-size:15px;outline:none;background:#fff;color:#5c4743;box-sizing:border-box;display:block;resize:vertical}textarea{min-height:110px;line-height:1.7}input:focus,textarea:focus{border-color:#a86d65;box-shadow:0 0 0 3px rgba(168,109,101,.08)}
+.note{font-size:13px;color:#8d7772;line-height:1.7}
+footer{padding:45px;text-align:center;background:#f8e3df;color:#8c6862}
+@media(max-width:600px){.names{font-size:54px}.card{padding:42px 18px}.intro{font-size:16px}.gallery{grid-template-columns:1fr}.photo{height:190px}.cover h1{font-size:50px}}
+</style>
+</head>
+<body>
+
+<div class="cover" id="cover">
+  <div class="envelope">
+    <div class="seal">💌</div>
+    <h1>Mohamed & Nermin</h1>
+    <p>لديكم دعوة خاصة لأجمل ليلة في حياتنا ❤️</p>
+    <button class="open-btn" onclick="openInvite()">افتح الدعوة ✨</button>
+  </div>
+</div>
+
+<div id="petals"></div>
+
+<main class="hero">
+  <div class="card">
+    <div class="small">بِسْمِ اللهِ الرَّحْمَنِ الرَّحِيمِ</div>
+    <div class="intro">بكل الحب والفرحة، نتشرف بدعوتكم لمشاركتنا أجمل ليلة في حياتنا</div>
+    <div class="names">Mohamed<br><span class="and">&</span><br>Nermin</div>
+    <div class="date">15 September 2026 • 9:00 PM</div>
+    <div class="venue">قاعة الماسة • قها</div>
+    <a class="btn" href="#details">تفاصيل الليلة</a>
+    <a class="btn" target="_blank" href="https://maps.app.goo.gl/qVCY8hixRHvuxem9A?g_st=iw">📍 الموقع</a>
+  </div>
+</main>
+
+<section>
+  <h2 class="title">Our Special Day Is Near ❤️</h2>
+  <div class="count">
+    <div class="unit"><div class="num" id="days">0</div><div class="label">يوم</div></div>
+    <div class="unit"><div class="num" id="hours">0</div><div class="label">ساعة</div></div>
+    <div class="unit"><div class="num" id="minutes">0</div><div class="label">دقيقة</div></div>
+    <div class="unit"><div class="num" id="seconds">0</div><div class="label">ثانية</div></div>
+  </div>
+</section>
+
+<section>
+  <h2 class="title">حكايتنا</h2>
+  <div class="story">
+    <div style="font-size:35px">🌹</div>
+    <p>كل حكاية جميلة تبدأ بلحظة، وكل لحظة جميلة تستحق أن تُشارك مع من نحب.</p>
+    <p>يسعدنا أن تكونوا معنا في بداية فصل جديد من حكايتنا، وأن تكتمل فرحتنا بوجودكم بجانبنا.</p>
+    <b>Mohamed & Nermin</b>
+  </div>
+</section>
+
+<section id="details">
+  <h2 class="title">تفاصيل ليلتنا</h2>
+  <div class="details">
+    <div class="box">📅<br><b>التاريخ</b><br>Tuesday, 15 September 2026</div>
+    <div class="box">🕘<br><b>الميعاد</b><br>9:00 مساءً</div>
+    <div class="box">📍<br><b>المكان</b><br>قاعة الماسة – قها</div>
+  </div>
+  <br>
+  <a class="btn" target="_blank" href="https://maps.app.goo.gl/qVCY8hixRHvuxem9A?g_st=iw">افتح الخريطة 🗺️</a>
+</section>
+
+
+
+<section>
+  <h2 class="title">أكد حضورك</h2>
+  <div class="rsvp">
+    <p>وجودك هيفرق معانا جدًا ❤️</p>
+    <input id="guestName" placeholder="اكتب اسمك">
+    <textarea id="guestMessage" rows="4" placeholder="اكتب مسدج أو كلمة جميلة ❤️"></textarea>
+    <button class="btn" onclick="confirmAttendance()">تأكيد الحضور عبر واتساب 💌</button>
+    <p class="note">اكتب اسمك ورسالتك، واضغط تأكيد الحضور لإرسالهم عبر واتساب.</p>
+  </div>
+</section>
+
+<footer>نتمنى أن تكتمل فرحتنا بوجودكم معنا ❤️<br>Mohamed & Nermin</footer>
+
+<script>
+function openInvite(){document.getElementById("cover").classList.add("hide")}
+const target = new Date("2026-09-15T21:00:00+03:00").getTime();
+function tick(){
+  let d=target-Date.now(); if(d<0)d=0;
+  document.getElementById("days").textContent=Math.floor(d/86400000);
+  document.getElementById("hours").textContent=Math.floor(d/3600000)%24;
+  document.getElementById("minutes").textContent=Math.floor(d/60000)%60;
+  document.getElementById("seconds").textContent=Math.floor(d/1000)%60;
+}
+tick();setInterval(tick,1000);
+
+function confirmAttendance(){
+  const name=document.getElementById("guestName").value.trim();
+  const message=document.getElementById("guestMessage").value.trim();
+  if(!name || !message){alert("اكتب اسمك والمسج الأول ❤️");return}
+  const text=`السلام عليكم ❤️%0Aتأكيد حضور فرح Mohamed & Nermin%0Aالاسم: ${encodeURIComponent(name)}%0Aالمسج: ${encodeURIComponent(message)}%0Aالتاريخ: 15/9/2026 - الساعة 9 مساءً`;
+  window.open("https://wa.me/201026006992?text="+text,"_blank");
+}
+
+for(let i=0;i<20;i++){
+  const p=document.createElement("div");p.className="petal";p.textContent=i%2?"🌸":"🤍";
+  p.style.left=Math.random()*100+"vw";
+  p.style.animationDuration=(7+Math.random()*9)+"s";
+  p.style.animationDelay=(-Math.random()*14)+"s";
+  document.getElementById("petals").appendChild(p);
+}
+</script>
+</body>
+</html>
